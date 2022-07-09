@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="flicker_image_size">120dp</dimen>
+</resources>

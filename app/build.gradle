@@ -1,0 +1,89 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "kotlinx-serialization"
+    id "kotlin-kapt"
+    id "dagger.hilt.android.plugin"
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "au.com.vaishali.practice"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation "androidx.core:core-ktx:$androidxCoreVersion"
+    implementation "androidx.appcompat:appcompat:$androidxAppCompactVersion"
+    implementation "com.google.android.material:material:$androidxMaterialVersion"
+
+    implementation "androidx.constraintlayout:constraintlayout:$androidxConstrainLayoutVersion",
+            "androidx.recyclerview:recyclerview:$androidxRecyclerViewVersion"
+
+    //Navigation controller
+    implementation "androidx.navigation:navigation-fragment-ktx:$androidxNavigationVersion",
+            "androidx.navigation:navigation-ui-ktx:$androidxNavigationVersion"
+
+    //LifeCycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidxLifeCycleVersion",
+            "androidx.lifecycle:lifecycle-common:$androidxLifeCycleVersion",
+            "androidx.lifecycle:lifecycle-runtime:$androidxLifeCycleVersion",
+            "androidx.lifecycle:lifecycle-livedata-ktx:$androidxLifeCycleVersion"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            "com.google.code.gson:gson:$retrofitVersion",
+            "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            "com.squareup.okhttp3:logging-interceptor:$okhttpInterceptorVersion"
+
+    //Kotlin Serialisation
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinXSerializationVersion"
+
+    //Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinVersion"
+
+    //Hilt injection
+    implementation "com.google.dagger:hilt-android:$hiltVersion"
+    kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
+    //Test
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$junitExtVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+
+}
+
+kapt {
+    useBuildCache true
+    correctErrorTypes true
+}
