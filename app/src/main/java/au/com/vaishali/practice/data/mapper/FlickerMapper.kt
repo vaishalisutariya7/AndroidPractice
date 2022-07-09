@@ -10,7 +10,7 @@ fun mapDataToDomainFlickerPhotos(flickerPhotoResponse: FlickerPhotoResponse): Do
         mapDataToDomainPhoto(flickerPhotoResponse.photos?.photo)
     )
 
-fun mapDataToDomainPhoto(photo: List<Photo>?): List<DomainPhoto>? =
+private fun mapDataToDomainPhoto(photo: List<Photo>?): List<DomainPhoto>? =
     photo?.map {
         DomainPhoto(
             it.id,

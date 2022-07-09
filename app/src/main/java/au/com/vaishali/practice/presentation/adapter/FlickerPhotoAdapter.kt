@@ -53,7 +53,6 @@ class FlickerPhotoAdapter @Inject constructor(private val context: Context) :
         notifyItemRangeChanged(0, listOfPhotos.size)
     }
 
-
     interface OnFlickerPhotoClickListener {
         fun onPhotoClickListener(photo: FlickerPhoto)
     }
