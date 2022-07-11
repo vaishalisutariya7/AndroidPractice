@@ -14,6 +14,8 @@ ViewBinding - Generates a binding class for each XML layout file present in that
 
 Coroutines - For asynchronous and more..
 
+UnitTesting - Spek Framework using mockk 
+
 Contributed By: Vaishali Jivani
 
 Project structure
