@@ -20,7 +20,7 @@ class HomeViewModel @Inject constructor(private val getListOfFlickerPhotoUseCase
         object DisplayLoading : DisplayEvent()
         object FinishLoading : DisplayEvent()
         object DisplayEmptyList : DisplayEvent()
-        data class DisplayError(private val error: String) : DisplayEvent()
+        data class DisplayError(val error: String) : DisplayEvent()
     }
 
     private val _getListOfFlickerPhoto = SingleLiveEvent<DisplayEvent>()
@@ -28,8 +28,8 @@ class HomeViewModel @Inject constructor(private val getListOfFlickerPhotoUseCase
 
     var job: Job? = null
 
-    private val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
-        _getListOfFlickerPhoto.setValue(DisplayError("${throwable.localizedMessage}"))
+    private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
+        _getListOfFlickerPhoto.postValue(DisplayError("${throwable.localizedMessage}"))
     }
 
     fun textGetsChanged() {
@@ -40,17 +40,17 @@ class HomeViewModel @Inject constructor(private val getListOfFlickerPhotoUseCase
         getListOfFlickerPhotos(searchText)
 
     private fun getListOfFlickerPhotos(searchText: String) {
-        _getListOfFlickerPhoto.value = DisplayLoading
+        _getListOfFlickerPhoto.postValue(DisplayLoading)
         job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
             val response = mapToDomainToPresentationFlickerPhotoItem(
                 getListOfFlickerPhotoUseCase.getListOfFlickerPhotos(searchName = searchText)
             )
             if (response.isNullOrEmpty()) {
-                _getListOfFlickerPhoto.value = DisplayEmptyList
+                _getListOfFlickerPhoto.postValue(DisplayEmptyList)
             } else {
                 _getListOfFlickerPhoto.postValue(DisplayPhotos(response))
             }
         }
-        _getListOfFlickerPhoto.value = FinishLoading
+        _getListOfFlickerPhoto.postValue(FinishLoading)
     }
 }

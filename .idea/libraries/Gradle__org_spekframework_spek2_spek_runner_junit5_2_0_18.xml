@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: org.spekframework.spek2:spek-runner-junit5:2.0.18">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Photocert/WhiteLabAndroid/caches/modules-2/files-2.1/org.spekframework.spek2/spek-runner-junit5/2.0.18/685fa4d0466fcc773503fc61970c88030dea0de9/spek-runner-junit5-2.0.18.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../Photocert/WhiteLabAndroid/caches/modules-2/files-2.1/org.spekframework.spek2/spek-runner-junit5/2.0.18/9a7610b4d2685f4f41577d18685fca8265d633b3/spek-runner-junit5-2.0.18-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../Photocert/WhiteLabAndroid/caches/modules-2/files-2.1/org.spekframework.spek2/spek-runner-junit5/2.0.18/9a7610b4d2685f4f41577d18685fca8265d633b3/spek-runner-junit5-2.0.18-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

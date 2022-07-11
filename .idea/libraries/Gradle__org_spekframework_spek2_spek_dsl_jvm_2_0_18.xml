@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: org.spekframework.spek2:spek-dsl-jvm:2.0.18">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Photocert/WhiteLabAndroid/caches/modules-2/files-2.1/org.spekframework.spek2/spek-dsl-jvm/2.0.18/7864c5aa65ec24d35fe9bed8a8df815151657033/spek-dsl-jvm-2.0.18.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../Photocert/WhiteLabAndroid/caches/modules-2/files-2.1/org.spekframework.spek2/spek-dsl-jvm/2.0.18/7d7ad29911d02302eac998e31ef2bea94a3b2917/spek-dsl-jvm-2.0.18-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../Photocert/WhiteLabAndroid/caches/modules-2/files-2.1/org.spekframework.spek2/spek-dsl-jvm/2.0.18/eceda628bd7e1f7773686ea4f35d3945140d49a9/spek-dsl-jvm-2.0.18-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
